@@ -1,16 +1,5 @@
 #!/bin/bash
 
-host="$DB_HOST"
-user="$DB_USER"
-pass="$DB_PASSWORD"
-
-until mariadb -h "$host" -u "$user" -p"$pass" -e "SELECT 1;" > /dev/null 2>&1; do
-  echo "Waiting for MariaDB at $host..."
-  sleep 2
-done
-
-echo "MariaDB is up, starting WordPress..."
-
 #TODO as env later
 # WP_URL=lgottsch.42.fr
 # WP_TITLE=InceptionLGOTTSCH
