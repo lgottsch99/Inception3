@@ -5,11 +5,6 @@ RUN		apt update && apt install -y --no-install-recommends --no-install-suggests 
 		openssl && \
 		rm -rf /var/lib/apt/lists/*
 
-#TODO as env later
-# ARG CERT_FOLDER=/etc/nginx/certs/
-# ARG CERTIFICATE=/etc/nginx/certs/certificate.crt
-# ARG	KEY=/etc/nginx/certs/certificate.key
-
 ARG CERT_FOLDER CERTIFICATE KEY DOMAIN
 
 
