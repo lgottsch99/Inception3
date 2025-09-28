@@ -4,7 +4,6 @@
 WP_ADMIN_PASSWORD=$(cat /run/secrets/db_root_password)
 WP_PASSWORD=$(cat /run/secrets/db_password)
 
-
 #change ownership of wp files to www-data user
 chown -R www-data:www-data /var/www/inception/
 

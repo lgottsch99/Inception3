@@ -10,7 +10,7 @@ RUN		apt update && apt install -y --no-install-recommends --no-install-suggests 
 # ARG CERTIFICATE=/etc/nginx/certs/certificate.crt
 # ARG	KEY=/etc/nginx/certs/certificate.key
 
-ARG CERT_FOLDER CERTIFICATE KEY
+ARG CERT_FOLDER CERTIFICATE KEY DOMAIN
 
 
 #generate tsl certs, CN=common name of cert, domain name that the certificate is valid for
@@ -18,7 +18,7 @@ RUN mkdir -p ${CERT_FOLDER} && \
 	openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
     -out ${CERTIFICATE} \
     -keyout ${KEY} \
-    -subj "/CN=lgottsch.42.fr"
+    -subj "/CN=${DOMAIN}"
 
 COPY	conf/nginx.conf	/etc/nginx/
 COPY	conf/server.conf	/etc/nginx/conf.d/
