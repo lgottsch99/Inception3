@@ -4,7 +4,7 @@ COMPOSE_FILE = -f srcs/docker-compose.yml
 build:
 	docker compose $(COMPOSE_FILE) build
 
-up:
+up: create dir
 	docker compose $(COMPOSE_FILE) up -d 
 
 down:
@@ -12,3 +12,8 @@ down:
 
 status:
 	docker ps
+
+
+create dir:
+	@mkdir -p ~/data/wordpress
+	@mkdir -p ~/data/database
