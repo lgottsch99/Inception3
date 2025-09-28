@@ -1,15 +1,9 @@
 #!/bin/bash
 
-#TODO as env later
-# WP_URL=lgottsch.42.fr
-# WP_TITLE=InceptionLGOTTSCH
-# WP_ADMIN_USER=theroot
-# WP_ADMIN_PASSWORD=rootpw
-# WP_ADMIN_EMAIL=theroot@123.com
-# WP_USER=wp_user
-# WP_PASSWORD=db_pw
-# WP_EMAIL=theuser@123.com
-# WP_ROLE=editor
+#read secrets
+WP_ADMIN_PASSWORD=$(cat /run/secrets/db_root_password)
+WP_PASSWORD=$(cat /run/secrets/db_password)
+
 
 #change ownership of wp files to www-data user
 chown -R www-data:www-data /var/www/inception/

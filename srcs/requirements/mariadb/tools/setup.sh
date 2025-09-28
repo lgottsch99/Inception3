@@ -2,11 +2,9 @@
 
 service mariadb start
 
+DB_PASS_ROOT=$(cat /run/secrets/db_root_password)
+DB_PASSWORD=$(cat /run/secrets/db_password)
 
-# DB_NAME=wordpress
-# DB_USER=wp_user
-# DB_PASSWORD=db_pw
-# DB_PASS_ROOT=rootpw
 
 #create DB and user
 mariadb -v -u root << EOF
