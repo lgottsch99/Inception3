@@ -1,9 +1,6 @@
 #!/bin/bash
 
 
-
-
-
 #TODO as env later
 # WP_URL=lgottsch.42.fr
 # WP_TITLE=InceptionLGOTTSCH
