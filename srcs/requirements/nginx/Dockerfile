@@ -15,7 +15,7 @@ RUN mkdir -p ${CERT_FOLDER} && \
     -keyout ${KEY} \
     -subj "/CN=${DOMAIN}"
 
-COPY	conf/nginx.conf	/etc/nginx/
+COPY	conf/nginx.conf		/etc/nginx/
 COPY	conf/server.conf	/etc/nginx/conf.d/
 
 #complete server conf file (SAFER: otherwise sensitive info (where certs live) public)
